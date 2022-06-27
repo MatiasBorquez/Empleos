@@ -20,7 +20,6 @@ public class VacantesController {
     
     @GetMapping("/delete")
     public String eliminar(@RequestParam("id") int idVacante, Model model) {
-        System.out.println("Borrando vacante con id: " + idVacante);
         model.addAttribute("id", idVacante);
         return "mensaje";
     }
@@ -28,7 +27,6 @@ public class VacantesController {
     @GetMapping("/view/{id}")
     public String verDetalle(@PathVariable("id") int idVacante, Model model) {
         Vacante vacante = serviceVacante.buscarVacanteId(idVacante);
-        System.out.println("Vacante: " + vacante);
         model.addAttribute("vacante", vacante);
 
         //Buscamos los detalles de la vacante en id BC...
