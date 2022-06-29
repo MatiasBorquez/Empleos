@@ -7,4 +7,5 @@ import boros.model.Vacante;
 public interface IVacanteService {
     List<Vacante> buscarTodas();
     Vacante buscarVacanteId(Integer idVacante);
+    void guardar(Vacante vacante);
 }

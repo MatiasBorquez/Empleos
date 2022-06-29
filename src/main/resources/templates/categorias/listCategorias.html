@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,8 +27,9 @@
         <div class="card">
           <h4 class="card-header"><strong>Listado de Categorías</strong></h4>              
           <div class="card-body">
-            <a class="btn btn-primary" href="#" role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>            
+            <a class="btn btn-primary" th:href="@{/categorias/create}" role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>            
             <hr>
+            <div th:if="${msg != null}" class='alert alert-success' th:text="${msg}" role='alert'></div>
             <table class="table table-hover">
               <thead class="thead-light">
                 <tr>
@@ -39,33 +40,15 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Recursos Humanos</td>
-                  <td>Trabajos relacionados con el area de RH.</td>
+                <tr th:each="cat : ${categorias}">
+                  <th scope="row" th:text="${cat.id}"></th>
+                  <td th:text="${cat.nombre}"></td>
+                  <td th:text="${cat.descripcion}"></td>
                   <td>
                     <a href="#" class="btn btn-success btn-sm" role="button" title="Editar"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                     <a href="#" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar"><i class="fas fa-trash" aria-hidden="true"></i></a>
                   </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Ventas</td>
-                  <td>Ofertas de trabajo relacionado con ventas.</td>
-                  <td>
-                    <a href="#" class="btn btn-success btn-sm" role="button" title="Editar"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-                    <a href="#" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar"><i class="fas fa-trash" aria-hidden="true"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Arquitectura</td>
-                  <td>Diseño de planos en general y trabajos relacionados.</td>
-                  <td>
-                    <a href="#" class="btn btn-success btn-sm" role="button" title="Editar"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-                    <a href="#" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar"><i class="fas fa-trash" aria-hidden="true"></i></a>
-                  </td>
-                </tr>                
+                </tr>                              
               </tbody>
             </table>
             

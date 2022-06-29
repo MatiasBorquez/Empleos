@@ -11,6 +11,9 @@ public class Vacante{
     private Double salario;
     private Integer destacado;
     private String imagen="no-image.png";
+    private String estatus;
+    private String detalles;
+    private Categoria categoria;
 
     @Override
     public String toString() {
@@ -21,6 +24,9 @@ public class Vacante{
         sb.append(", descripcion=").append(descripcion);
         sb.append(", fecha=").append(fecha);
         sb.append(", salario=").append(salario);
+        sb.append(", estatus=").append(estatus);
+        sb.append(", detalles=").append(detalles);
+        sb.append(", Categoria=").append(categoria);
         sb.append('}');
         return sb.toString();
     }
@@ -79,5 +85,29 @@ public class Vacante{
 
     public void setImagen(String imagen) {
         this.imagen = imagen;
+    }
+
+    public String getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(String detalles) {
+        this.detalles = detalles;
+    }
+
+    public String getEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(String estatus) {
+        this.estatus = estatus;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
