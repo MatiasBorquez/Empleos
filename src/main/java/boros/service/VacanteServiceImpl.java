@@ -4,6 +4,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import boros.model.Vacante;
@@ -92,6 +95,30 @@ public class VacanteServiceImpl implements IVacanteService {
 	@Override
 	public void guardar(Vacante vacante) {
 		lista.add(vacante);
+	}
+
+	@Override
+	public List<Vacante> buscarDesacadas() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void eliminar(Integer idVacante) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Vacante> buscarByExample(Example<Vacante> example) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Page<Vacante> buscarTodas(Pageable page) {
+		// TODO Auto-generated method stub
+		return null;
 	}
     
 }

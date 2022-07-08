@@ -2,8 +2,14 @@ package boros.model;
 
 import java.util.Date;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="Vacantes")
 public class Vacante{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
     private String descripcion;
@@ -13,6 +19,9 @@ public class Vacante{
     private String imagen="no-image.png";
     private String estatus;
     private String detalles;
+    //@Transient
+    @OneToOne
+    @JoinColumn(name = "idCategoria")
     private Categoria categoria;
 
     @Override
@@ -109,5 +118,9 @@ public class Vacante{
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public  void reset(){
+        this.imagen = null;
     }
 }
