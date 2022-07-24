@@ -17,6 +17,7 @@ public class Usuario {
     private String username;
     private int estatus;
     private Date fechaRegistro;
+    
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name="UsuarioPerfil", joinColumns = @JoinColumn(name = "idUsuario"),
      inverseJoinColumns = @JoinColumn(name="idPerfil"))

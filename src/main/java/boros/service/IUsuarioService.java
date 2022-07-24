@@ -15,4 +15,9 @@ public interface IUsuarioService {
      void guardar(Usuario usuario);
      void eliminar(Integer idUsuario);
      List<Usuario> buscarTodos();
+     Usuario buscarPorId(Integer idUsuario);
+     Usuario buscarPorUsuario(String username);
+     List <Usuario> buscarRegistrados();
+     int bloquear(int idUsuario);
+     int activar(int idUsuario);
 }

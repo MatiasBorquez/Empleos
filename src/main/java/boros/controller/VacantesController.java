@@ -39,7 +39,6 @@ public class VacantesController {
         List<Vacante> vacantes = serviceVacante.buscarTodas();
         model.addAttribute("vacantes", vacantes);
         return "vacantes/listVacantes";
-
     }
 
     @GetMapping("/create")
